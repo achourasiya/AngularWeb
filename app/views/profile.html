@@ -1,0 +1,924 @@
+﻿   <!--=== Profile ===-->
+
+<div data-ng-controller="profileController">
+    <section class="row">
+        <!--=== End Style Switcher ===-->
+        <div class="wrapper">
+            <div class="profile">
+                <div class="container content">
+                    <div class="row">
+                        <!--Left Sidebar-->
+                        <div class="col-md-3 md-margin-bottom-40">
+                            <img class="img-responsive profile-img margin-bottom-20" src="assets/img/team/5.jpg" alt="">
+
+                            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                                <li class="list-group-item">
+                                    <a href="profile.html"><i class="fa fa-bar-chart-o"></i> Overall</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="profile_me.html"><i class="fa fa-user"></i> Profile</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="profile_users.html"><i class="fa fa-group"></i> Users</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="profile_projects.html"><i class="fa fa-cubes"></i> My Projects</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="profile_comments.html"><i class="fa fa-comments"></i> Comments</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="profile_history.html"><i class="fa fa-history"></i> History</a>
+                                </li>
+                                <li class="list-group-item active">
+                                    <a href="profile_settings.html"><i class="fa fa-cog"></i> Settings</a>
+                                </li>
+                            </ul>
+                            <div class="panel-heading-v2 overflow-h">
+                                <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Task Progress</h2>
+                                <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                            </div>
+                            <h3 class="heading-xs">Web Design <span class="pull-right">92%</span></h3>
+                            <div class="progress progress-u progress-xxs">
+                                <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u">
+                                </div>
+                            </div>
+                            <h3 class="heading-xs">Unify Project <span class="pull-right">85%</span></h3>
+                            <div class="progress progress-u progress-xxs">
+                                <div style="width: 85%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" class="progress-bar progress-bar-blue">
+                                </div>
+                            </div>
+                            <h3 class="heading-xs">Sony Corporation <span class="pull-right">64%</span></h3>
+                            <div class="progress progress-u progress-xxs margin-bottom-40">
+                                <div style="width: 64%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="64" role="progressbar" class="progress-bar progress-bar-dark">
+                                </div>
+                            </div>
+                            <hr>
+
+                        </div>
+                        <!--End Left Sidebar-->
+
+                        <div class="col-md-9">
+                            <!--Profile Body-->
+                            <!-- Tab v2 -->
+                            <!-- End Tab v2 -->
+
+                            <div class="profile-body margin-bottom-20">
+                                <div class="tab-v1">
+                                    <ul class="nav nav-justified nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#profile">Edit Profile</a></li>
+                                        <li><a data-toggle="tab" href="#passwordTab">Change Password</a></li>
+                                        <li><a data-toggle="tab" href="#payment">Payment Options</a></li>
+                                        <li><a data-toggle="tab" href="#settings">Notification Settings</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="profile" class="profile-edit tab-pane fade in active">
+                                            <h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
+                                            <p>Below are the name and email addresses on file for your account.</p>
+                                            </br>
+
+
+                                            <form class="sky-form" id="sky-form" action="#">
+                                                <section>
+                                                    <div class="form-group">
+
+                                                        <label for="roletype"><strong>Role Type</strong></label>
+
+                                                        <select id="roletype" ng-model="roletype" class="form-control" ng-change="selectShowDiv(roletype)">
+                                                            <option value="">--Please Select Role Type--</option>
+                                                            <option ng-model="roletype" value="{{roletype.value}}" ng-repeat="roletype in selectroletype" ng-click="showDetails   = ! showDetails"> {{roletype.label}}</option>
+                                                        </select>
+                                                    </div>
+
+
+                                                    <div class="col-md-12" ng-show="showTranslator">
+                                                        <div class="panel-body ng-scope">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Telephone Number</strong></label>
+                                                                </div>
+
+
+                                                                <div class="col-sm-9">
+                                                                    <input type="tel" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Telephone" data-ng-model="user.telephone" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+
+                                                            </div> <br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Email Id</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="email" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Email" data-ng-model="user.email" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Base</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Location" data-ng-model="user.location" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <!--<div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for="">Language Known:</label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Please specify languages" data-ng-model="user.languageknown" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div>-->
+
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Language</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+
+
+                                                                        <select id="site-address-language" ng-model="user.language" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Language --</option>
+                                                                            <option ng-model="language" value="{{language.value}}" ng-repeat="language in selectlanguage"> {{language.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Experience</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Experience" data-ng-model="user.experience" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+
+                                                            <!--<div ng-controller="DatepickerDemoCtrl">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-3">
+                                                                        <label for=""><strong>Date</strong></label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <p class="input-group">
+                                                                            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                                                            <span class="input-group-btn">
+                                                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                               </div>
+
+
+                                                                </div><br /><br />-->
+
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Work Limitations</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <!--<span class="ui-select">
+
+
+                                                                        <select id="site-address-work" ng-model="user.work" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Work Limitation --</option>
+                                                                            <option ng-model="work" value="{{work.value}}" ng-repeat="work in selectWork"> {{work.label}}</option>
+                                                                        </select>
+                                                                    </span>-->
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Travel</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Duration</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Holidays</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Location</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-md-12" ng-show="showModerator">
+                                                        <div class="panel-body ng-scope">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Telephone Number</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="tel" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Telephone" data-ng-model="user.telephone" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Email Id</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="email" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Email" data-ng-model="user.email" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Sex</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+
+
+                                                                        <select id="site-address-sex" ng-model="user.sex" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Gender --</option>
+                                                                            <option ng-model="sex" value="{{sex.value}}" ng-repeat="sex in selectsex"> {{sex.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Base</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Location" data-ng-model="user.base" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Language</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+
+
+                                                                        <select id="site-address-language" ng-model="user.language" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Language --</option>
+                                                                            <option ng-model="language" value="{{language.value}}" ng-repeat="language in selectlanguage"> {{language.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div><h3>Experience</h3></div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Number of Years</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Min value 0, max value 30" data-ng-model="user.numberofyears" required="" data-min="0" data-max="30" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Type of Experience</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-experience" ng-model="user.experience" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Country --</option>
+                                                                            <option ng-model="experience" value="{{experience.value}}" ng-repeat="experience in selectexperience"> {{experience.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Work Limitations</strong></label>
+                                                                <div class="col-sm-9">
+
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Travel</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Duration</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Holidays</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Location</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="col-md-12" ng-show="showTranscriber">
+                                                        <div class="panel-body ng-scope">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Telephone Number</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="tel" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Telephone" data-ng-model="user.telephone" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Email Id</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="email" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Email" data-ng-model="user.email" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Sex</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+
+
+                                                                        <select id="site-address-sex" ng-model="user.sex" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Gender --</option>
+                                                                            <option ng-model="sex" value="{{sex.value}}" ng-repeat="sex in selectsex"> {{sex.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Base</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Location" data-ng-model="user.base" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Language</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+
+
+                                                                        <select id="site-address-language" ng-model="user.language" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Language --</option>
+                                                                            <option ng-model="language" value="{{language.value}}" ng-repeat="language in selectlanguage"> {{language.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div><h3>Experience</h3></div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Number of Years</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Min value 0, max value 100" data-ng-model="user.numberofyears" required="" data-min="0" data-max="30" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Type of Experience</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-experience" ng-model="user.experience" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Country --</option>
+                                                                            <option ng-model="experience" value="{{experience.value}}" ng-repeat="experience in selectexperience"> {{experience.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Work Limitations</strong></label>
+                                                                <div class="col-sm-9">
+
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Travel</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Duration</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Holidays</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Location</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12" ng-show="showContent_tagger">
+                                                        <div class="panel-body ng-scope">
+                                                            <!--<div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for="">Age</label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Min value 0, max value 100" data-ng-model="user.age" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for="">Experience:</label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Min value 0, max value 100" data-ng-model="user.experience" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for="">Language Known:</label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Please specify languages" data-ng-model="user.languageknown" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div>-->
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12" ng-show="showAgency">
+                                                        <div class="panel-body ng-scope">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Name of Key Contact</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter name of Key Contact Person" data-ng-model="user.contact" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Backup Person</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter name of Backup Person" data-ng-model="user.person" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>City</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your City" data-ng-model="user.city" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Branch</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Branch" data-ng-model="user.branch" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Base</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Location" data-ng-model="user.location" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Ethnicity</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-Ethnicity" ng-model="user.Ethni" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Ethnicity --</option>
+                                                                            <option ng-model="Ethnicity" value="{{Ethnicity.value}}" ng-repeat="Ethnicity in selectEthnicity"> {{Ethnicity.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+
+
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Language</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+
+
+                                                                        <select id="site-address-language" ng-model="user.language" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Language --</option>
+                                                                            <option ng-model="language" value="{{language.value}}" ng-repeat="language in selectlanguage"> {{language.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Experience</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Experience" data-ng-model="user.experience" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Work Limitations</strong></label>
+                                                                <div class="col-sm-9">
+
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Travel</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Duration</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Holidays</label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label><input type="checkbox" value="">Location</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+
+                                                    <div class="col-md-12" ng-show="showConsumer">
+                                                        <div class="panel-body ng-scope">
+                                                            <div class="form-group">
+
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Sex</strong></label>
+                                                                <div class="col-sm-9">
+
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-sex" ng-model="user.opt" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Gender --</option>
+                                                                            <option ng-model="sex" value="{{sex.value}}" ng-repeat="sex in selectsex"> {{sex.label}}</option>
+
+                                                                        </select>
+
+                                                                    </span>
+                                                                </div>
+
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Age</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Age" data-ng-model="user.age" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Education</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-edu" ng-model="user.edu" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="" style="text-align:center">-- Select Education --</option>
+                                                                            <option ng-model="Education" value="{{Education.value}}" ng-repeat="Education in selecteducation"> {{Education.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Relationship Status</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-edu" ng-model="user.Relation" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Status --</option>
+                                                                            <option ng-model="Relation" value="{{Relation.value}}" ng-repeat="Relation in selectrelationstatus"> {{Relation.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Occupation</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-occupation" ng-model="user.occupation" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="" style="text-align:center">-- Select Income --</option>
+                                                                            <option ng-model="occupation" value="{{Occupation.value}}" ng-repeat="Occupation in selectoccupation"> {{Occupation.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Occupation of Head of Household</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-houseoccupation" ng-model="user.houseoccupation" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="" style="text-align:center">-- Select Income --</option>
+                                                                            <option ng-model="houseoccupation" value="{{houseOccupation.value}}" ng-repeat="houseOccupation in selectoccupation"> {{houseOccupation.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Age of Children</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter Age of your Children" data-ng-model="user.ageofchildren" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Household Income</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-income" ng-model="user.income" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="" style="text-align:center">-- Select Income --</option>
+                                                                            <option ng-model="income" value="{{Income.value}}" ng-repeat="Income in selecthouseholdincome"> {{Income.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Brand usership</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter your Favourite Brand" data-ng-model="user.brand" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Ethnicity</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-Ethnicity" ng-model="user.Ethni" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Ethnicity --</option>
+                                                                            <option ng-model="Ethnicity" value="{{Ethnicity.value}}" ng-repeat="Ethnicity in selectEthnicity"> {{Ethnicity.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <label for="inputEmail3" class="col-sm-3 control-label"><strong>Country</strong></label>
+                                                                <div class="col-sm-9">
+                                                                    <span class="ui-select">
+                                                                        <select id="site-address-COUNTRY" ng-model="user.COUNTRY" class="form-control" ng-change="changeDemo(opt)" required>
+                                                                            <option value="">-- Select Country --</option>
+                                                                            <option ng-model="COUNTRY" value="{{COUNTRY.value}}" ng-repeat="COUNTRY in selectCountry"> {{COUNTRY.label}}</option>
+                                                                        </select>
+                                                                    </span>
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>States</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Please specify State" data-ng-model="user.state" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Lead time to fix Appointment</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter time in Days" data-ng-model="user.appointment" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label for=""><strong>Cost of Recruitment</strong></label>
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control ng-valid-number ng-valid-max ng-valid-min ng-animate ng-pristine ng-invalid ng-invalid-required" placeholder="Enter cost of Recruitment" data-ng-model="user.cost" required="" data-min="0" data-max="100" style="-webkit-transition-timing-function: initial, initial; transition-timing-function: initial, initial; -webkit-transition-delay: initial, initial; transition-delay: initial, initial;">
+                                                                </div>
+                                                            </div><br /><br />
+
+
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+
+
+                                                    <!--</dd>
+                                                        <dt><strong>Your name </strong></dt>
+                                                        <dd>
+                                                            <input type="text" class="form-control">
+                                                            <span>
+                                                                <a class="pull-right" href="#">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                            </span>
+                                                        </dd>
+                                                        <hr>
+                                                        <dt><strong>Your ID </strong></dt>
+                                                        <dd>
+                                                            <input type="text" class="form-control">
+                                                            <span>
+                                                                <a class="pull-right" href="#">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                            </span>
+                                                        </dd>
+                                                        <hr>
+                                                        <dt><strong>Company name </strong></dt>
+                                                        <dd>
+                                                            <input type="text" class="form-control">
+                                                            <span>
+                                                                <a class="pull-right" href="#">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                            </span>
+                                                        </dd>
+                                                        <hr>
+                                                        <dt><strong>Primary Email Address </strong></dt>
+                                                        <dd>
+                                                            <input type="text" class="form-control">
+                                                            <span>
+                                                                <a class="pull-right" href="#">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                            </span>
+                                                        </dd>
+                                                        <hr>
+                                                        <dt><strong>Phone Number </strong></dt>
+                                                        <dd>
+                                                            <input type="text" class="form-control">
+                                                            <span>
+                                                                <a class="pull-right" href="#">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                            </span>
+                                                        </dd>
+                                                        <hr>
+                                                        <dt><strong>Office Number </strong></dt>
+                                                        <dd>
+                                                            (304) 44-9810-296
+                                                            <span>
+                                                                <a class="pull-right" href="#">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                            </span>
+                                                        </dd>
+                                                        <hr>
+                                                        <dt><strong>Address </strong></dt>
+                                                        <dd>
+                                                            California, US
+                                                            <span>
+                                                                <a class="pull-right" href="#">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                            </span>
+                                                        </dd>
+                                                        <hr>
+                                                    </dl>-->
+                                                </section>
+                                                <button type="button" class="btn btn-warning btn-xs">Cancel</button>
+                                                <button type="button" class="btn btn-primary btn-xs">Save Changes</button>
+                                            </form>
+                                        </div>
+
+                                        <div id="passwordTab" class="profile-edit tab-pane fade">
+                                            <h2 class="heading-md">Manage your Security Settings</h2>
+                                            <p>Change your password.</p>
+                                            </br>
+                                            <form class="sky-form" id="sky-form4" action="#">
+                                                <dl class="dl-horizontal">
+                                                    <dt>Username</dt>
+                                                    <dd>
+                                                        <section>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-user"></i>
+                                                                <input type="text" placeholder="Username" name="username">
+                                                                <b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+                                                            </label>
+                                                        </section>
+                                                    </dd>
+                                                    <dt>Email address</dt>
+                                                    <dd>
+                                                        <section>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-envelope"></i>
+                                                                <input type="email" placeholder="Email address" name="email">
+                                                                <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+                                                            </label>
+                                                        </section>
+                                                    </dd>
+                                                    <dt>Enter your password</dt>
+                                                    <dd>
+                                                        <section>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-lock"></i>
+                                                                <input type="password" id="password" name="password" placeholder="Password">
+                                                                <b class="tooltip tooltip-bottom-right">Don't forget your password</b>
+                                                            </label>
+                                                        </section>
+                                                    </dd>
+                                                    <dt>Confirm Password</dt>
+                                                    <dd>
+                                                        <section>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-lock"></i>
+                                                                <input type="password" name="passwordConfirm" placeholder="Confirm password">
+                                                                <b class="tooltip tooltip-bottom-right">Don't forget your password</b>
+                                                            </label>
+                                                        </section>
+                                                    </dd>
+                                                </dl>
+                                                <label class="toggle toggle-change"><input type="checkbox" checked="" name="checkbox-toggle-1"><i></i>Remember password</label>
+                                                </br>
+                                                <section>
+                                                    <label class="checkbox"><input type="checkbox" id="terms" name="terms"><i></i><a href="#">I agree with the Terms and Conditions</a></label>
+                                                </section>
+                                                <button type="button" class="btn-u btn-u-default">Cancel</button>
+                                                <button class="btn-u" type="submit">Save Changes</button>
+                                            </form>
+                                        </div>
+                                        <div id="payment" class="profile-edit tab-pane fade">
+                                            <h2 class="heading-md">Manage your Payment Settings</h2>
+                                            <p>Below are the payment options for your account.</p>
+                                            </br>
+                                            <form class="sky-form" id="sky-form" action="#">
+                                                <!--Checkout-Form-->
+                                                <section>
+                                                    <div class="inline-group">
+                                                        <label class="radio"><input type="radio" checked="" name="radio-inline"><i class="rounded-x"></i>Visa</label>
+                                                        <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>MasterCard</label>
+                                                        <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>PayPal</label>
+                                                    </div>
+                                                </section>
+                                                <section>
+                                                    <label class="input">
+                                                        <input type="text" name="name" placeholder="Name on card">
+                                                    </label>
+                                                </section>
+
+                                                <div class="row">
+                                                    <section class="col col-10">
+                                                        <label class="input">
+                                                            <input type="text" name="card" id="card" placeholder="Card number">
+                                                        </label>
+                                                    </section>
+                                                    <section class="col col-2">
+                                                        <label class="input">
+                                                            <input type="text" name="cvv" id="cvv" placeholder="CVV2">
+                                                        </label>
+                                                    </section>
+                                                </div>
+
+                                                <div class="row">
+                                                    <label class="label col col-4">Expiration date</label>
+                                                    <section class="col col-5">
+                                                        <label class="select">
+                                                            <select name="month">
+                                                                <option disabled="" selected="" value="0">Month</option>
+                                                                <option value="1">January</option>
+                                                                <option value="1">February</option>
+                                                                <option value="3">March</option>
+                                                                <option value="4">April</option>
+                                                                <option value="5">May</option>
+                                                                <option value="6">June</option>
+                                                                <option value="7">July</option>
+                                                                <option value="8">August</option>
+                                                                <option value="9">September</option>
+                                                                <option value="10">October</option>
+                                                                <option value="11">November</option>
+                                                                <option value="12">December</option>
+                                                            </select>
+                                                            <i></i>
+                                                        </label>
+                                                    </section>
+                                                    <section class="col col-3">
+                                                        <label class="input">
+                                                            <input type="text" placeholder="Year" id="year" name="year">
+                                                        </label>
+                                                    </section>
+                                                </div>
+                                                <button type="button" class="btn-u btn-u-default">Cancel</button>
+                                                <button class="btn-u" type="submit">Save Changes</button>
+                                                <!--End Checkout-Form-->
+                                            </form>
+                                        </div>
+                                        <div id="settings" class="profile-edit tab-pane fade">
+                                            <h2 class="heading-md">Manage your Notifications.</h2>
+                                            <p>Below are the notifications you may manage.</p>
+                                            </br>
+                                            <form class="sky-form" id="sky-form" action="#">
+                                                <label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i></i>Email notification</label>
+                                                <hr>
+                                                <label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i></i>Send me email notification when a user comments on my blog</label>
+                                                <hr>
+                                                <label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i></i>Send me email notification for the latest update</label>
+                                                <hr>
+                                                <label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i></i>Send me email notification when a user sends me message</label>
+                                                <hr>
+                                                <label class="toggle"><input type="checkbox" checked="" name="checkbox-toggle-1"><i></i>Receive our monthly newsletter</label>
+                                                <hr>
+                                                <button type="button" class="btn-u btn-u-default">Reset</button>
+                                                <button class="btn-u" type="submit">Save Changes</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Profile Body-->
+                        </div>
+                    </div><!--/end row-->
+                </div><!--/container-->
+            </div>
+            <!--=== End Profile ===-->
+        </div>
+    </section>
+</div>
+

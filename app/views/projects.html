@@ -1,0 +1,150 @@
+﻿
+<div class="page page-table" data-ng-controller="projectsController">
+    <section class="panel panel-default table-dynamic">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Projects table</strong></div>
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="search"
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Showing {{filteredStores.length}}/{{stores.length}} entries
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="th">
+                            Project Name
+                            <span class="glyphicon glyphicon-chevron-up"
+                                  data-ng-click=" order('Project') "
+                                  data-ng-class="{active: row == 'Project'}"></span>
+                            <span class="glyphicon glyphicon-chevron-down"
+                                  data-ng-click=" order('-Project') "
+                                  data-ng-class="{active: row == '-Project'}"></span>
+                        </div>
+                    </th>
+                    
+                    <th>
+                        <div class="th">
+                            Project Description
+                            <span class="glyphicon glyphicon-chevron-up"
+                                  data-ng-click=" order('ProjectDescription') "
+                                  data-ng-class="{active: row == 'ProjectDescription'}"></span>
+                            <span class="glyphicon glyphicon-chevron-down"
+                                  data-ng-click=" order('-ProjectDescription') "
+                                  data-ng-class="{active: row == '-ProjectDescription'}"></span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th">
+                            Created Date
+                            <span class="glyphicon glyphicon-chevron-up"
+                                  data-ng-click=" order('CreatedDate') "
+                                  data-ng-class="{active: row == 'CreatedDate'}"></span>
+                            <span class="glyphicon glyphicon-chevron-down"
+                                  data-ng-click=" order('-CreatedDate') "
+                                  data-ng-class="{active: row == '-CreatedDate'}"></span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th">
+                            Remove
+                        <span class="glyphicon glyphicon-chevron-up"
+                        data-ng-click=" order('TradeMark') "
+                        data-ng-class="{active: row == 'TradeMark'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                  data-ng-click=" order('-TradeMark') "
+                  data-ng-class="{active: row == '-TradeMark'}"></span>
+        </div>
+    </th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="trade in currentPageStores">
+                    <td>{{trade.projectName}}</td>
+                    <td>{{trade.ProjectDescription}}</td>
+                    <td>{{trade.CreatedDate}}</td>
+                    <td><button class="btn-sm btn-primary"></button> </td>
+                </tr>
+            </tbody>
+        </table>
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+                    <span>
+                        Show
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()"></select>
+                        entries per page
+                    </span>
+                </div>
+                <!--<div class="col-md-6 text-right pagination-container">
+                    <pagination class="pagination-sm"
+                                page="currentPage"
+                                total-items="filteredStores.length"
+                                max-size="4"
+                                on-select-page="select(page)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                boundary-links="true"></pagination>
+                </div>-->
+                                
+
+
+
+
+
+
+
+            </div>
+        </footer>
+    </section>
+</div>
+
+
+
+<!--<div ng-controller="DemoCtrl">
+
+    <p>Example from <a target="_blank" href="https://github.com/tlierfeld">tlierfeld</a></p>
+    <button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+    <button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
+    <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
+    <p>
+        <strong>Filter:</strong> {{tableParams.filter()|json}}
+
+
+        <table ng-table="tableParams" show-filter="true" class="table">
+            <tr ng-repeat="user in $data">
+                <td data-title="'Requestor'" sortable="'Requestor'" filter="{ 'Requestor': 'text' }">
+                    {{user.Requestor}}
+                </td>
+                <td data-title="'TradeMark'" sortable="'TradeMark'" filter="{ 'TradeMark': 'text' }">
+                    {{user.TradeMark}}
+                </td>
+            </tr>
+        </table>
+
+
+
+</div>
+
+
+<h1>This is demo site </h1>
+
+<div ng-controller="bootstrapIntegrationCtrl">
+    <table datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="table table-striped table-bordered"></table>
+</div>-->

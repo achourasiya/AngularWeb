@@ -1,0 +1,20 @@
+﻿<div class="row" ng-hide="true" ui-jq="fadeIn">
+    <h1 class="page-header">Videos</h1>
+    <a class="btn btn-primary" href="#/Video-create"> Add Video <i class="icon-plus-sign"></i> </a>
+    <input id="collections" name="collections" ui-select2="filters.collectionOptions"
+           ng-model="selectedCollectionModel">
+    <span class="badge badge-info"> {{renderedVideos.length}}</span> <span class="label label-info">   Videos </span>
+    <ul class="thumbnails" ng-hide="!Videos.length">
+        <li class="row" ng-repeat="Video in renderedVideos" ng-animate="'thumb'">
+            <div class="thumbnail" id="{{Video.id}}">
+                <div class="detail caption">
+                    <a href="#/Video/{{Video.id}}">
+                        <img ng-src="{{Video.getThumbVideoURL(Video)}}" alt="">
+                    </a>
+                    <!--<strong>{{Video.name}}</strong>-->
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
